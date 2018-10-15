@@ -6,7 +6,7 @@ module top (
 
 );
 
-    SB_PLL40_CORE #(.FEEDBACK_PATH("SIMPLE"),
+    SB_PLL40_PAD #(.FEEDBACK_PATH("SIMPLE"),
                     .PLLOUT_SELECT("GENCLK"),
                     .DIVR(4'b0000),
                     .DIVF(7'b1010011),
@@ -15,7 +15,7 @@ module top (
             )
             uut
             (
-                    .REFERENCECLK(clk),
+                    .PACKAGEPIN(clk),
                     .PLLOUTCORE(led),
                     .RESETB(1'b1),
                     .BYPASS(1'b0)
